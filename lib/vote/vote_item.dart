@@ -19,7 +19,7 @@ class VoteItem extends StatelessWidget{
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
 
-          Text(data.contestant!.name.toString(), style: const TextStyle(
+          Text(data.contestant.name.toString(), style: const TextStyle(
             color: Colors.white,
             fontSize: 30
           ),)

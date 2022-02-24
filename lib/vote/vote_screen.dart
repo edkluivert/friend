@@ -9,22 +9,18 @@ class VoteScreen extends GetView<VoteController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        children: [
-         controller.obx((data)
-           => GridView.builder(gridDelegate:const SliverGridDelegateWithMaxCrossAxisExtent(
-            maxCrossAxisExtent: 200,
-            childAspectRatio: 3 / 2,
-            crossAxisSpacing: 20,
-            mainAxisSpacing: 20),
-            itemCount: data!.data!.length,
-               itemBuilder:(context,index) {
-             print(data);
-             return VoteItem(data: data.data![index],);
+      body: controller.obx((data)
+        => GridView.builder(gridDelegate:const SliverGridDelegateWithMaxCrossAxisExtent(
+         maxCrossAxisExtent: 200,
+         childAspectRatio: 3 / 2,
+         crossAxisSpacing: 20,
+         mainAxisSpacing: 20),
+         itemCount: 3,
+            itemBuilder:(context,index) {
+          print(data);
+          return Text(data![index]['status']);
 
-               }),
-         )
-        ],
+            }),
       ),
     );
   }

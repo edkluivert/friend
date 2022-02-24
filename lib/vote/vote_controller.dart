@@ -2,7 +2,7 @@ import 'package:friend/vote/vote.dart';
 import 'package:friend/vote/vote_provider.dart';
 import 'package:get/get.dart';
 
-class VoteController extends GetxController with  StateMixin<Vote>{
+class VoteController extends GetxController with  StateMixin<List<dynamic>>{
 
   final VoteProvider voteProvider = VoteProvider();
 

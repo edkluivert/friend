@@ -1,20 +1,24 @@
 import 'package:friend/vote/vote.dart';
 import 'package:get/get.dart';
+import 'package:get/get_connect/http/src/request/request.dart';
 
 
 class VoteProvider extends GetConnect{
 
-  final userToken = "token";
+  final userToken = "262|ZSOVG5VKwlO1ZGVsqYSuh3O77Uhggw3vFPZVLyic";
 
 
-  Future<Vote> getVotes() async{
+  Future<List<dynamic>> getVotes() async{
 
-    final headers = {"Authorization": "Bearer $userToken"};
-    var response = await get("https://thumbprint-api.herokuapp.com/api/v1/user/voted-contestants",headers: headers);
+    final headers = {'Authorization': 'Bearer $userToken'};
+    var response = await get("https://thumbprint-api.herokuapp.com/api/v1/user/7/available-election-positions",
+    headers: headers
+    );
     if(response.status.hasError){
       return Future.error(response.statusText!);
     }else{
-      return Vote.fromJson(response.body);
+      print("works ${response.body}");
+      return response.body;
     }
 
   }
