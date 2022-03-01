@@ -1,13 +1,16 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:friend/vote/vote.dart';
+
+import 'contestants.dart';
+
+
 
 class VoteItem extends StatelessWidget{
 
-  final Data data;
+  final Contestants contestants;
 
-  const VoteItem({Key? key, required this.data}) : super(key: key);
+  const VoteItem({Key? key, required this.contestants}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +22,7 @@ class VoteItem extends StatelessWidget{
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
 
-          Text(data.contestant.name.toString(), style: const TextStyle(
+          Text(contestants.name, style: const TextStyle(
             color: Colors.white,
             fontSize: 30
           ),)
@@ -29,3 +32,4 @@ class VoteItem extends StatelessWidget{
   }
 
 }
+
