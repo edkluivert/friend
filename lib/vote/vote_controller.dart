@@ -8,7 +8,7 @@ import 'election.dart';
 class VoteController extends GetxController with  StateMixin<Election>{
 
   final VoteProvider voteProvider = VoteProvider();
-
+  var currentStep =0.obs;
   @override
   void onInit() {
     super.onInit();
